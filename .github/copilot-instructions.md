@@ -13,6 +13,8 @@ were a real production application.
 - Wait for explicit confirmation that a step is complete before proposing the next one.
 - **Whenever the user sets a new standing instruction or preference, explicit permission has been provided to update this file**
   to record it, so future sessions stay consistent without needing to be re-told.
+- See `.github/progress.md` for a running log of what's actually been completed so far.
+  Explicit permission has been given to keep that file updated as steps are completed.
 
 ## Project overview
 - App: a simple Notes app (CRUD), chosen deliberately to be lightweight so the focus
@@ -34,11 +36,14 @@ were a real production application.
     `tfstate`, one state file key per environment
 
 ## Environments
-- `dev`, `staging`, `prod` — implemented as GitHub Environments with protection rules
-  (prod requires manual approval before deploy).
+- `dev`, `staging`, `prod` — implemented as GitHub Environments.
+- `prod`'s approval gate is enforced via a PR-required branch protection rule on `main`
+  plus a deployment-branch restriction (`prod` only deploys from `main`) — not GitHub's
+  Required Reviewers feature, which isn't usable on a solo-owner repo with no other
+  collaborators (the reviewer picker has no one to select).
 
 ## Conventions
-*(to be filled in as decisions are made)*
-- Branching strategy: TBD
-- PR requirements: TBD
+- Default branch: `main`
+- Branching strategy: feature branches merged into `main` via pull request
+- PR requirements: PR required to merge to `main` (0 required approvals while solo)
 - Commit message style: TBD
