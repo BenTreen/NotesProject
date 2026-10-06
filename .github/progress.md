@@ -20,6 +20,9 @@ as steps are completed — standing permission has been given to keep it current
   `main` instead as the practical equivalent.)
 - Branch protection ruleset on `main`: requires a pull request before merging
   (0 required approvals, since solo maintainer for now)
+- Enabled `fetch.prune` globally (auto-cleans stale local refs to deleted remote branches)
+- Created repo folder structure: `terraform/`, `backend/`, `frontend/`,
+  `.github/workflows/` (each with a placeholder `.gitkeep`)
 
 ## Decided conventions
 - Default branch: `main`
@@ -30,7 +33,6 @@ as steps are completed — standing permission has been given to keep it current
   for solo personal repos with no collaborators)
 
 ## Not yet done / next steps
-- Decide and create repo folder structure (e.g. `terraform/`, `backend/`, `frontend/`)
 - Write Terraform for infrastructure (App Service, Azure SQL)
 - Set up Azure AD App Registrations + federated credentials per environment (manual,
   one-time bootstrap — see copilot-instructions.md)
