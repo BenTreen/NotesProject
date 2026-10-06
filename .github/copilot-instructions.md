@@ -23,6 +23,14 @@ were a real production application.
   hosted on Azure App Service.
 - Repo: https://github.com/BenTreen/NotesProject
 
+## Folder structure
+- `.github/workflows/` — GitHub Actions pipelines
+- `terraform/` — infrastructure as code (App Service, Azure SQL, networking)
+- `backend/` — FastAPI app
+- `frontend/` — static site
+- Each currently contains a placeholder `.gitkeep` file (git doesn't track empty
+  folders); delete a folder's `.gitkeep` once real content is added to it.
+
 ## Infrastructure & deployment rules
 - All infrastructure is defined and managed via Terraform.
 - All deployments (infra apply + app deploy) happen via GitHub Actions only — no local
